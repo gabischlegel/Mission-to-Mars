@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import datetime as dt
 
-
+url = 'https://marshemispheres.com/'
 #Set up Splinter
 def scrape_all():
     # Initiate headless driver for deployment
@@ -111,7 +111,7 @@ def mars_facts():
     df.set_index('description', inplace=True)
 
     #Convert dataframe into HTML format, add bootstrap
-    return df.to_html()
+    return df.to_html(_classes="table table-striped")
 
 
 def hemispheres(browser):
